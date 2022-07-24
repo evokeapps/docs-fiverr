@@ -1,0 +1,15 @@
+{{define "main"}}
+<div class="container">
+  <div class="row py-4 mb-5">
+    <div class="col">
+      <div class="fs-2 fw-bold">{{.Title}}</div>
+      <div class="fs-6 text-muted">
+        Posted on {{.Date | time.Format ":date_long"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">{{.Content}}</div>
+  </div>
+</div>
+{{end}}

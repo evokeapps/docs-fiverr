@@ -1,0 +1,48 @@
+{{define "main"}}
+<div class="container">
+  <div class="row py-4 mb-5">
+    <div class="col fs-1 text-primary">{{.Title}}</div>
+    <div class="fs-6 text-muted">
+      Posted on {{.Page.Date | time.Format ":date_long"}} · {{with
+      .Params.updated}} Updated on {{. | time.Format ":date_long"}} {{end}}
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col">{{.Content}}</div>
+  </div>
+  <div class="row g-3 row-cols-1">
+    {{range .Pages}}
+    <div class="col">
+      <div
+        class="p-3 border rounded shadow-sm position-relative d-flex flex-row"
+      >
+        <div class="me-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            fill="#0d6efd"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+            />
+            <path
+              d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"
+            />
+          </svg>
+        </div>
+        <div>
+          <div class="fs-5 fw-bold">{{.Title}}</div>
+          <div class="fs-6 text-muted">
+            Posted on {{.Date | time.Format ":date_short"}} by
+            <span class="fw-bold">{{.Params.author}}</span>
+          </div>
+          <a href="{{.Permalink}}" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+    {{end}}
+  </div>
+</div>
+{{end}}
