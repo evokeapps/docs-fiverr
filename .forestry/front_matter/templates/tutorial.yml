@@ -1,0 +1,16 @@
+---
+label: tutorial
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: list
+  name: categories
+  label: categories
+- type: text
+  name: author
+  label: author
+- type: datetime
+  name: date
+  label: date
