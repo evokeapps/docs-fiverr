@@ -14,3 +14,5 @@ fields:
 - type: datetime
   name: date
   label: date
+pages:
+- content/tutorials/hello-world.md
