@@ -38,7 +38,7 @@
             Posted on {{.Date | time.Format ":date_short"}} by
             <span class="fw-bold">{{.Params.author}}</span>
           </div>
-          <a href="{{.Permalink}}" class="stretched-link"></a>
+          <a href="{{.URL | relURL}}" class="stretched-link"></a>
         </div>
       </div>
     </div>
